@@ -1,0 +1,8 @@
+title: Safety Popplio Commands
+description: "This webpage shows the current list of commands that Safety Popplio has to let any reader know about how to use it. "
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-time-machine
+
+gems:
+  - jekyll-mentions
