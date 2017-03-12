@@ -1,7 +1,18 @@
-Safety Popplio Commands
+Cosmic Solgaleo Commands
 ====================
 
-These are the current commands that the bot currently has so then you can be able to use it in a room.
+Bot commands are in files of this path. If you want to add more commands just add more files with the specifications mentioned in main README. Commands included in this repository are explained below.
+
+1v1 Commands
+------------
+These are some custom commands used to create a tournament in the 1v1 room of the Azure Server. 
+- `1v1 [none|doubles|2v2]` - The bot creates a 1v1 tournament (Single or Double Elimination), or a 2v2 Doubles tournament. 
+- `monoletter` - The bot creates an 1v1 tournament and declares what pokemon of a specific letter to use. 
+- `monocolor` - The bot creates an 1v1 tournament and declares what pokemon of a specific color to use.
+- `monopoke [name]` - The bot creates an 1v1 tournament and declares what pokemon should you use.
+- `monothreat` - The bot creates an 1v1 tournament and declares what pokemon of a specific type to use. 
+
+For the monoletter, monocolor, and monothreat commands, PLEASE do not spam this command, because that the bot will switch letter, color, and typing every time the command is used. So just bold over using these commands to notify users about what type of Mono 1v1 tournament it is. 
 
 Basic Commands
 ------------
@@ -17,12 +28,11 @@ Basic features and some information about the bot.
  - `seen [user]` - Latest data from an user
  - `alts [user]` - List of known alts of an user (Alts detedted from namechanges)
  - `say [text]` - Force to say something
- - `pair [user]` - Make the bot calculate how compatible you are with someone else.
 
 Dynamic Commands
 ------------
 
-Dynamic commads are commands saved in a JSON, used for commands that are continuously changing, like forum links or usage stats. Commands for using, creating, modifying and deleting dynamic commands are the following:
+Dynamic commands are commands saved in a JSON, used for commands that are continuously changing, like forum links or usage stats. Commands for using, creating, modifying and deleting dynamic commands are the following:
 
  - `dyn [cmd]` - To call a dynamic command
  - `wall [cmd]` - To call a dynamic command (with announce / wall)
@@ -192,8 +202,16 @@ Tournaments
 
 Commands for Tournaments feature
 
- - `tour [tier]` - The bot starts a tournament in the designated tier, as well as setting up the roompoll after the tournament has been made.
- - `runtour [minutes]` - The bots sets up an autostart time in which after it goes off, starts the tournament automatically.
+ - `tour` - Start a tournament
+ - `tour tier=example, timer=30, users=64, dq=1.5, type=elimination` - Start a tournament with custom and optional parameters
+  - **tier**: Tournament format / tier
+  - **timer**: Max time (in seconds) before starting the tournament
+  - **users**: Max number of users (for singups)
+  - **dq**: Minutes for autodq
+  - **type**: elimination or roundrobin
+  - **scout**: set `scout=off` for enabling scout protection
+ - `tourhelp` - Help for `tour command`
+ - `tourstart` - Force start a tornament
  - `tourend` - Force end a tornament
 
 Commands for leaderboards system
@@ -306,40 +324,3 @@ Developing commands for GroupChats feature
 
  - `ignoregroupchat [groupchat]` - temporarily ignore a groupchat (to leave a groupchat). Then you must edit the config to make it permanent
  - `unignoregroupchat [groupchat]` - unignore a groupchat
-
-Custom Commands
-------------
-
-These are some custom commands which have been implemented into the bot manually by Mighty Sciz.
-
-Custom Commands
--------------------------
-
- - `ce [user]` - Creates a Catch and Evolve tournament, [user] designating the host of the tournament. Be aware that it will create a tournament and decide a tier by itself without the need of the host to use !pick.
- - `cehelp` - The bot gives out the details about what is Catch and Evolve in general.
- - `celink` - The bot PMs you with the link to the current C&E generator.
-
-Art Shop / The Design Shop Commands
------------------------------------
-
-- `showsprite [link]` - The bot declares an image of the target sprite you use.
-- `randavatar` - The bot declares a random Pokemon Showdown avatar (useful for spriters who want an idea of what to sprite with pokemon).
-- `artprofile [user] - The bot displays the collection of a spriter, in which it shows the avatars he has made so far for people. Remember that it can be used only if the spriter has his art profile set by Mighty Sciz.
-- `template [normalsprite|touchofcolor|animatedcoloring]` - The bot displays templates of items that are bought by users in the Design Shop. 
- 
-Casino Commands
----------------
-
-These are some custom features for the bot to gamble in Casinos in the server.
-
-- `bank [user]` - The bot broadcasts how many bucks does a user have. If there is no target, it broadcasts how many bucks the bot has.
-- `startdice [number]` - Makes the bot start a dice game based on the target number you give out.
-- `joindice` - Makes the bot join a dice game started by someone.
-- `enddice` - Makes the bot end the current dice game.
-
-
-Miscellaneous Commands
-----------------------
-
-- `pair [user]` - The bot decides the compatibility between 2 people.
-- `randp` - The bot uses /addhtmlbox and randomly picks a pokemon. (Server Command)
